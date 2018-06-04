@@ -1,0 +1,162 @@
+<html>
+<head>
+<title> jquery</title>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+
+<link href="jquery-ui/jquery-ui.css" rel="stylesheet">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<link rel="stylesheet" type="text/css" href="karsunstyle.css">
+<style type="text/css">
+
+
+#hometext{
+
+
+position:relative;
+
+text-align:center;
+color:#5F5F5F;
+border:1px solid #E1E3E5;
+background-color:#E1E3E5
+}
+
+.frontimages{
+position:relative;
+padding-top:70px;
+width:400px;
+display:block;
+
+
+margin: 0 auto;
+}
+#outerbox{
+
+position:relative;
+top:150px;
+
+width:100%;
+height:100%;
+background:white;
+
+
+}
+
+ #secondbox{
+position: relative;
+top:10%;
+width:50%;
+height:500px;
+background-color:#F5F5F5;
+margin: 0 auto;
+}
+
+</style>
+
+
+
+
+
+
+
+</head>
+
+
+
+<body>
+<div id="fixed">
+<div id="top"><img id="top_logo" height="100px" src="http://www.karsun-llc.com/wp-content/uploads/2016/09/Logo-300-150.png"></div>
+
+<div id="second_bar">
+
+<div id ="home" class="second_bar_section">
+<div class="same">
+<a href="index.html">Home </a></div>
+
+<div class="same">
+<a id="hover1" href="display.html">Display Board </a>
+
+<div class="dropdown"  >
+<p><a href="display.html" style="color:black">Interactive Board </a></p>
+<p><a href="piechart.html" style="color:black">Pie-Chart </a></p>
+<p><a href="bargraph.html" style="color:black">Bar-graph </a></p>
+</div>
+
+</div>
+
+
+<div class="same">
+<a href="uploads.html">Upload </a></div>
+
+<div class="same">
+<a href="trouble.html">Troubleshoot </a></div>
+
+<div class="same">
+<a href="dimtable.html">Create Dim Table</a></div>
+</div>
+
+
+
+</div>
+
+</div>
+<div id ="outerbox">
+<div id="secondbox">
+
+
+<div id="hometext">
+
+<h2 >Welcome to Dataware house Project</h2>
+
+
+
+</div>
+
+
+<img src="pics/home_1.png" class="frontimages">
+<img src="pics/home_2.png" class="frontimages">
+
+
+</div>
+</div>
+
+
+
+
+
+<div id="bottomfixed">
+<div id="bottombar"><span id="bottomtext">KARSUN SOLUTIONS-llc &copy; </span></div>
+</div>
+<script type="text/javascript" src="karsunscripts.js"></script>
+<script type="text/javascript" >
+
+var myIndex = 0;
+change();
+
+function change() {
+    
+    var x = document.getElementsByClassName("frontimages");
+    for (var i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    
+    setTimeout(change, 1500);
+}
+
+</script>
+
+
+</body>
+
+
+
+
+
+
+</html>

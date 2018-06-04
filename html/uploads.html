@@ -1,0 +1,244 @@
+<html>
+<head>
+<title> jquery</title>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+
+<link href="jquery-ui/jquery-ui.css" rel="stylesheet">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<link rel="stylesheet" type="text/css" href="karsunstyle.css">
+<style type="text/css">
+
+
+
+
+ #forms{
+position:relative;
+margin: auto;
+width: 50%;
+top:25%;
+height:500px;
+background-color:#D6D6D6;
+border-radius:10px;
+box-shadow:5px 5px 10px grey;
+ }
+ 
+ label{
+ 
+ float:left;
+ 
+ padding:5px;
+ position:relative;
+ margin:auto;
+ 
+ width:110px;
+ font-size:110%;
+ 
+ }
+ .form_element{
+margin: auto;
+width: 80%;
+
+padding-top:10%;
+
+ }
+ input{
+ padding: 10px 5px 12px 5px;
+
+                margin-left:10%;
+                border-radius: 5px;
+                border: 1px solid grey;
+                width:220px;
+				
+
+ 
+ }
+ #submit_button{
+ position:relative;
+ left:25%
+ 
+ }
+
+ #submit_button:hover{
+ background-color:#93b4ed;
+ color:white;
+ box-shadow:2px 5px 10px grey;
+ }
+ #hide{
+ 
+ display:none;
+ }
+ 
+ #password_button{
+ position:relative;
+ margin:auto;
+
+ 
+ }
+
+ #password_button:hover{
+ background-color:#93b4ed;
+ color:white;
+ box-shadow:2px 5px 10px grey;
+ }
+ #sidebox{
+ width:300px;
+ height:350px;
+text-align:justify;
+border-radius:10px;
+float:left;
+position:relative;
+top:35%;
+left:10px;
+ box-shadow:5px 5px 4px grey;
+ }
+.ui-accordion-header{
+   background:#D6D6D6;
+   border-radius:5px;
+}
+
+
+</style>
+
+
+
+
+
+</head>
+
+
+
+<body oncontextmenu="return false">
+<div id="fixed">
+<div id="top"><img id="top_logo" height="100px" src="http://www.karsun-llc.com/wp-content/uploads/2016/09/Logo-300-150.png"></div>
+
+<div id="second_bar">
+
+<div id ="home" class="second_bar_section">
+<div class="same">
+<a href="index.html">Home </a></div>
+
+<div class="same">
+<a id="hover1" href="display.html">Display Board </a>
+
+<div class="dropdown"  >
+<p><a href="display.html" style="color:black">Interactive Board </a></p>
+<p><a href="piechart.html" style="color:black">Pie-Chart </a></p>
+<p><a href="bargraph.html" style="color:black">Bar-graph </a></p>
+</div>
+
+</div>
+
+
+<div class="same">
+<a href="uploads.html">Uploads </a></div>
+
+<div class="same">
+<a href="trouble.html">Troubleshoot </a></div>
+
+<div class="same">
+<a href="dimtable.html">Create Dim Table </a></div>
+</div>
+
+
+
+</div>
+
+</div>
+<div id="sidebox">
+<h3>Password</h3>
+<div><p>If you are an authorized user to use the database of the company please enter the code or the paraphrase provided to you.</p></div>
+<h3>Source</h3>
+<div><p>Please enter the location of the source files you want to combine and add to database. Sum of all rows in all files should be less than 65k.</p></div>
+<h3>Destination</h3>
+<div><p>Enter the files you want to save to (final file will be placed here)</p></div>
+
+
+</div>
+
+
+<div id="forms">
+
+<form action="uploadfinal.php" method="POST" enctype="multipart/form-data">
+<div id="hide">
+
+
+<div class="form_element">
+<label for="file">Source Folder</label>
+<input type="file" name="file" id="Source" >
+</div>
+<div class="form_element">
+<input type="submit" name="submit" id="submit_button" value="Submit" >
+</div>
+</div>
+
+
+
+
+
+
+
+<div class="hide2">
+
+<div class="form_element">
+            
+                <label for="password">Password</label>
+                <input style="font-size:120%" type="password" name="password" id="password">
+
+            </div>
+
+
+</div>
+<div style="text-align:center; color:Red;">
+<div class="form_element">
+<input type="Button" class="hide2" id="password_button" value="Enter" >
+</div>
+<p id="password_result"></p>
+</div>
+
+</form>
+
+</div>
+
+
+
+<div id="bottomfixed">
+<div id="bottombar"><span id="bottomtext">KARSUN SOLUTIONS-llc &copy; </span></div>
+</div>
+<script type="text/javascript" src="karsunscripts.js"></script>
+<script type="text/javascript">
+$("#sidebox").accordion();
+
+ $("#password_button").click(function(){
+ 
+if($("#password").val()==""){
+$("#hide").css("display","block");
+$(".hide2").css("display","none");
+$("#password_result").html("Login Successful");
+$("#password_result").css("color","green");
+
+
+}
+else{
+
+$("#password_result").html("Un-successful")
+}
+ 
+ });
+
+ 
+  
+</script>
+
+
+</body>
+
+
+
+
+
+
+</html>

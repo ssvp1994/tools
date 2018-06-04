@@ -1,0 +1,197 @@
+<html>
+<head>
+<title> jquery</title>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+
+<link href="jquery-ui/jquery-ui.css" rel="stylesheet">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<link rel="stylesheet" type="text/css" href="karsunstyle.css">
+<style type="text/css">
+
+
+
+#iframe01{
+display:none;
+z-index:4;
+}
+
+#iframe02{
+display:none;
+z-index:4;
+}
+
+.iframe1{
+
+position:relative;
+
+float:left;
+bottom:275px;
+left:800px;
+}
+
+.draggable {
+
+ border:1px solid black; 
+ width: 160px; 
+ height: 15px;
+ margin:5px;
+ margin-top:60px;
+ background-color:white;
+ position:relative;
+ text-align:center;
+ border-radius:10px;
+ padding: 10px 10px 15px 10px; 
+ z-index:2;}
+ 
+ .draggable:hover{
+ background-color:#B32118;
+ color:white;
+ 
+ }
+ 
+ .draggable_prop{
+ margin-left:10px;
+ border-radius:10px;
+ box-shadow:10px 10px 10px #888;
+ position:relative;
+ float:left;
+ width: 700px; 
+ height: 400px;
+ background-color:#D6D6D6;
+
+ top:200px;
+ }
+#droppable { width: 180px;
+ height: 250px; 
+ text-align:center;
+ position:relative;
+ border-radius:10px;
+ left:400px;
+ top:-250px;
+border:1px solid black;
+ background-color:white;
+ padding: 0.5em; 
+ float: left;
+ z-index:1;
+ 
+bottom:100px; }
+
+
+iframe{
+position:relative;
+right:400px;
+border:1px black solid;
+margin:185px 5px 5px 5px;
+border-radius:10px;
+bottom:50px;
+z-index:15 !important;
+}
+
+</style>
+
+
+
+
+
+</head>
+
+
+
+<body>
+<div id="fixed">
+<div id="top"><img id="top_logo" height="100px" src="http://www.karsun-llc.com/wp-content/uploads/2016/09/Logo-300-150.png"></div>
+
+<div id="second_bar">
+
+<div id ="home" class="second_bar_section">
+<div class="same">
+<a href="home.html">Home </a></div>
+
+<div class="same">
+<a id="hover1" href="display.html">Display Board </a>
+
+<div class="dropdown"  >
+<p><a href="display.html" style="color:black">Interactive Board </a></p>
+<p><a href="piechart.html" style="color:black">Pie-Chart </a></p>
+<p><a href="bargraph.html" style="color:black">Bar-graph </a></p>
+</div>
+
+</div>
+
+
+<div class="same">
+<a href="uploads.html">Upload </a></div>
+
+<div class="same">
+<a href="trouble.html">Troubleshoot </a></div>
+
+<div class="same">
+<a href="dimtable.html">Create Dim Table</a></div>
+</div>
+
+
+
+</div>
+
+</div>
+</div>
+
+
+<div class="draggable_prop">
+<div class="wrapper">
+
+<div id="pi01" class="draggable">Pie-Chart</div>
+<div id="br01" class="draggable">Bar-graph</div>
+<div class="draggable">Unnamed</div>
+
+<div id="droppable">
+  <p>Drop here</p>
+<div class ="iframe1">
+<iframe style="z-index:15;" id="iframe01" width="500" height="400" src="https://app.powerbi.com/view?r=eyJrIjoiY2RlYWY0YWMtYjhkMy00Mjc2LTg1YTItYTM3NzQxNDI1ZDgzIiwidCI6ImE0MmQ3MTBlLTYwMjktNDI1ZS1iYTMzLTRhZTFlZGM4OTMwNyIsImMiOjN9" allowFullScreen="true"></iframe>
+</div>
+<div class ="iframe1">
+<iframe style="z-index:15;" id="iframe02"width="500" height="400" src="https://app.powerbi.com/view?r=eyJrIjoiMWZkYjA2YzgtZWViZi00Nzk3LTliYzAtMmMyYmIwYjIwNDc2IiwidCI6ImE0MmQ3MTBlLTYwMjktNDI1ZS1iYTMzLTRhZTFlZGM4OTMwNyIsImMiOjN9" allowFullScreen="true"></iframe>
+</div>
+
+</div>
+</div>
+</div>
+<div id="bottomfixed">
+<div id="bottombar"><span id="bottomtext">KARSUN SOLUTIONS-llc &copy; </span></div>
+</div>
+
+<script type="text/javascript" src="karsunscripts.js"></script>
+<script type="text/javascript">
+
+$( ".draggable" ).draggable({
+  containment: ".draggable_prop"
+});
+$( "#droppable" ).droppable({
+      drop: function( event, ui ) {
+       if (($(ui.draggable).attr("id")=="pi01")&&($(ui.draggable).attr("id")!="")){
+	   $("#iframe02").css({display:"block",border:"5px solid black"});
+	   $("#iframe02").draggable();  
+	   }
+	   
+	   else if(($(ui.draggable).attr("id")=="br01") &&($(ui.draggable).attr("id")!="")){
+	   $("#iframe01").css({display:"block",border:"5px solid black"});
+	   $("#iframe01").draggable();
+      }
+	   }
+    });
+  
+</script>
+
+
+</body>
+
+
+
+
+
+
+</html>
